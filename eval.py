@@ -102,8 +102,8 @@ def evaluate_stylize(G12, G21, loader, opts, split='test'):
     bleu_G21, _ = bleu_scorer_G21.compute_score(option='closest')
     bleu_G12, _ = bleu_scorer_G12.compute_score(option='closest')
 
-    print('BLEU scores for Style 1 to 2 ===> B1: %.3f  B2: %.3f B3: %.3f B4: %.3f'%(bleu_G12[0], bleu_G12[1], bleu_G12[2], bleu_G12[3]))
-    print('BLEU scores for Style 2 to 1 ===> B1: %.3f  B2: %.3f B3: %.3f B4: %.3f'%(bleu_G21[0], bleu_G21[1], bleu_G21[2], bleu_G21[3]))
+    print(('BLEU scores for Style 1 to 2 ===> B1: %.3f  B2: %.3f B3: %.3f B4: %.3f'%(bleu_G12[0], bleu_G12[1], bleu_G12[2], bleu_G12[3])))
+    print(('BLEU scores for Style 2 to 1 ===> B1: %.3f  B2: %.3f B3: %.3f B4: %.3f'%(bleu_G21[0], bleu_G21[1], bleu_G21[2], bleu_G21[3])))
 
 def main(opts):
     loader = DataLoader(opts)
@@ -164,10 +164,10 @@ if __name__ == '__main__':
     
     # DataLoader
     parser.add_argument('--batch_size', type=int, default=128, help='Batch Size for training and testing')
-    parser.add_argument('--dataFile', type=str, default='data/yafc_formal.h5', help='Preprocessed data stored in h5 format for S1')
-    parser.add_argument('--jsonFile', type=str, default='data/yafc_formal.json', help='json file containing vocabulary for S1')
-    parser.add_argument('--pdataFile', type=str, default='data/yafc_informal.h5', help='Preprocessed data stored in h5 format for S2')
-    parser.add_argument('--pjsonFile', type=str, default='data/yafc_informal.json', help='json file containing vocabulary for S2')
+    parser.add_argument('--dataFile', type=str, default='misc/shakespeare_original.h5', help='Preprocessed data stored in h5 format for S1')
+    parser.add_argument('--jsonFile', type=str, default='misc/shakespeare_original.json', help='json file containing vocabulary for S1')
+    parser.add_argument('--pdataFile', type=str, default='misc/shakespeare_modern.h5', help='Preprocessed data stored in h5 format for S2')
+    parser.add_argument('--pjsonFile', type=str, default='misc/shakespeare_modern.json', help='json file containing vocabulary for S2')
     parser.add_argument('--shuffle', type=str2bool, default=True, help='Shuffle training data?')
     
     # Models

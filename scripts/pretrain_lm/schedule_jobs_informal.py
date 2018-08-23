@@ -14,7 +14,7 @@ mapping_dict = {
     '__BATCH_SIZE__': '20',
     '__DATA_FILE__': '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_informal.h5',
     '__JSON_FILE__': '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_informal.json',
-    '__P_DATA_FILE__': '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_formal.h5',
+    '__P_DATA_FILE__': '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/shakespeare_modern.h5',
     '__P_DATA_JSON__': '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_formal.json',
     '__SHUFFLE__': 'True',
     '__TRAIN_MODE__': 'pretrain_lm',

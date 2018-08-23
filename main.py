@@ -107,6 +107,9 @@ def evaluate_language_model(lang_model, loader, opts, split='val'):
 
 def load_embedding_from_glove(opts, loader, embedding):
     glove_reader = GloveVec(opts.pretrained_glove_vector_path)
+    print("glove_reader.vect_size:",glove_reader.vect_size)
+    print("opts.embedding_size:",opts.embedding_size)
+    
     assert (glove_reader.vect_size == opts.embedding_size), "Embedding size mismatch"
     embed_data = np.zeros((loader.vocab_size, opts.embedding_size), dtype=np.float64)
     for word in loader.vocab.keys():
@@ -1398,10 +1401,14 @@ if __name__ == '__main__':
     
     # DataLoader
     parser.add_argument('--batch_size', type=int, default=128, help='Batch Size for training and testing')
-    parser.add_argument('--dataFile', type=str, default='data/yafc_formal.h5', help='Preprocessed data stored in h5 format for S1')
-    parser.add_argument('--jsonFile', type=str, default='data/yafc_formal.json', help='json file containing vocabulary for S1')
-    parser.add_argument('--pdataFile', type=str, default='data/yafc_informal.h5', help='Preprocessed data stored in h5 format for S2')
-    parser.add_argument('--pjsonFile', type=str, default='data/yafc_informal.json', help='json file containing vocabulary for S2')
+    # parser.add_argument('--dataFile', type=str, default='data/yafc_formal.h5', help='Preprocessed data stored in h5 format for S1')
+    # parser.add_argument('--jsonFile', type=str, default='data/yafc_formal.json', help='json file containing vocabulary for S1')
+    # parser.add_argument('--pdataFile', type=str, default='data/yafc_informal.h5', help='Preprocessed data stored in h5 format for S2')
+    # parser.add_argument('--pjsonFile', type=str, default='data/yafc_informal.json', help='json file containing vocabulary for S2')
+    parser.add_argument('--dataFile', type=str, default='misc/shakespeare_original.h5', help='Preprocessed data stored in h5 format for S1')
+    parser.add_argument('--jsonFile', type=str, default='misc/shakespeare_original.json', help='json file containing vocabulary for S1')
+    parser.add_argument('--pdataFile', type=str, default='misc/shakespeare_modern.h5', help='Preprocessed data stored in h5 format for S2')
+    parser.add_argument('--pjsonFile', type=str, default='misc/shakespeare_modern.json', help='json file containing vocabulary for S2')
     parser.add_argument('--shuffle', type=str2bool, default=True, help='Shuffle training data?')
     
     # Models
@@ -1434,9 +1441,9 @@ if __name__ == '__main__':
     parser.add_argument('--model_name', type=str, default='model', help='Name to be given for the saved models')
 
     # Model load parameters
-    parser.add_argument('--pretrained_lm1_model_path', type=str, default='./models/yafc_formal_lm_best.net', help='Pretrained language model for S1.')
-    parser.add_argument('--pretrained_lm2_model_path', type=str, default='./models/yafc_informal_lm_best.net', help='Pretrained language model for S2.')
-    parser.add_argument('--pretrained_seq2seq_model_path', type=str, default='./models/yafc_formal_informal.net', help='Pretrained seq2seq models G12 and G21')
+    parser.add_argument('--pretrained_lm1_model_path', type=str, default='./models/shakespeare_formal_lm_best.net', help='Pretrained language model for S1.')
+    parser.add_argument('--pretrained_lm2_model_path', type=str, default='./models/shakespeare_informal_lm_best.net', help='Pretrained language model for S2.')
+    parser.add_argument('--pretrained_seq2seq_model_path', type=str, default='./models/shakespeare_formal_informal.net', help='Pretrained seq2seq models G12 and G21')
 
     # Pretrain LM parameters
     parser.add_argument('--pretrained_glove_vector_path', type=str, default='./data/glove/glove.twitter.27B.200d.txt', help='Pretrained GloVe vectors file path')

@@ -7,7 +7,7 @@ class GloveVec:
     def __init__(self, file_name):
         self.vect_dict = {}
         self.vect_size = None
-        print ('Loading GloVe vectors from %s...' % (file_name)),
+        print(('Loading GloVe vectors from %s...' % (file_name)), end=' ')
         f = open(file_name, 'r')
         for l in f.readlines():
             line = l.strip().split()

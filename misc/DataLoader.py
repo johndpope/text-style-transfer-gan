@@ -32,7 +32,7 @@ class DataLoader(object):
       json_data = json.load(firstFile)
     self.args = json_data['args']
     self.vocab = json_data['vocabulary']
-    self.inv_vocab = {v: k for k, v in self.vocab.iteritems()}
+    self.inv_vocab = {v: k for k, v in self.vocab.items()}
     self.vocab_size = json_data['vocabulary_size']
 
     # Same stats for parallel corpus
@@ -60,7 +60,7 @@ class DataLoader(object):
       json_data = json.load(secondFile)
     self.pargs = json_data['args']
     self.pvocab = json_data['vocabulary']
-    self.inv_pvocab = {v: k for k, v in self.pvocab.iteritems()}
+    self.inv_pvocab = {v: k for k, v in list(self.pvocab.items())}
     self.pvocab_size = json_data['vocabulary_size']
 
     # Iteration tracker 

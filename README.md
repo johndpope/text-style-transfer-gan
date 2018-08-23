@@ -6,17 +6,6 @@ Style transfer in text using cycle-consistent WGANs
 <img src="imgs/CycleGAN.png"/>
 
 ## Requirements
-Environment and Imports
-You can either use the environment.yml file to set up a virtual environment or install the required packages.
-
-
-## CONDA CHEATSHEET
-https://conda.io/docs/_downloads/conda-cheatsheet.pdf .    
-      
-Use the environment.yml file by running:     
-conda env create -f environment.yml 
-source activate pytorch
-
 - Python 2.7
 - PyTorch 0.3.1
 - TensorboardX
@@ -33,7 +22,7 @@ For training on YAFC dataset:
 
 ```bash
 $ python main.py --batch_size 20 \
-        --dataFile data/yafc_formal.h5 \
+        --dataFile data/shakespeare_modern.h5 \
         --jsonFile data/yafc_formal.json \
         --shuffle True --train_mode pretrain_lm --embedding_size 300 \
         --hidden_size 350 --num_rnn_layers 1 --use_lstm True \
@@ -64,7 +53,7 @@ $ python main.py --batch_size 20 \
 
 ```bash
 $ python main.py --batch_size 128 \
-        --dataFile data/yafc_formal.h5 \
+        --dataFile data/shakespeare_modern.h5 \
         --jsonFile data/yafc_formal.json \
         --pdataFile data/yafc_informal.h5 \
         --pjsonFile data/yafc_informal.json \
@@ -85,7 +74,7 @@ $ python main.py --batch_size 128 \
 
 ```bash
 $ python main.py --batch_size 128 \
-        --dataFile data/yafc_formal.h5 \
+        --dataFile data/shakespeare_modern.h5 \
         --jsonFile data/yafc_formal.json \
         --pdataFile data/yafc_informal.h5 \
         --pjsonFile data/yafc_informal.json \
@@ -114,7 +103,7 @@ We evaluate our models on BLEU score with n ranging between 1 and 4:
 
 ~~~~
 $ python eval.py --model_path models/finetune_cyclegan/model_best.net \
-        --dataFile data/yafc_formal.h5 \
+        --dataFile data/shakespeare_modern.h5 \
         --jsonFile data/yafc_formal.json \
         --pdataFile data/yafc_informal.h5 \
         --pjsonFile data/yafc_informal.json \

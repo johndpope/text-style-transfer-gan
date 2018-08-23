@@ -12,7 +12,7 @@ mapping_dict = {
     # Algorithm hyperparameters
     '__CODE_ROOT__': '/scratch/cluster/pkar/text-style-transfer/cyclegan',
     '__BATCH_SIZE__': '128',
-    '__DATA_FILE__': ['/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_formal.h5', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/bible_darby.h5', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/shakespeare_original.h5'],
+    '__DATA_FILE__': ['/scratch/cluster/pkar/text-style-transfer/cyclegan/data/shakespeare_modern.h5', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/bible_darby.h5', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/shakespeare_original.h5'],
     '__JSON_FILE__': ['/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_formal.json', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/bible_darby.json', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/shakespeare_original.json'],
     '__P_DATA_FILE__': ['/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_informal.h5', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/bible_ylt.h5', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/shakespeare_modern.h5'],
     '__P_DATA_JSON__': ['/scratch/cluster/pkar/text-style-transfer/cyclegan/data/yafc_informal.json', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/bible_ylt.json', '/scratch/cluster/pkar/text-style-transfer/cyclegan/data/shakespeare_modern.json'],
